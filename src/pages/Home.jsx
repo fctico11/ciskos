@@ -1,6 +1,7 @@
 import heroBg from "../assets/CiskoHeader.webp";
 import logo from "../assets/ciskologo.webp";
 import ServicesSection from '../components/ServicesSection';
+import LocationSection from '../components/LocationSection';
 
 export default function Home() {
     return (
@@ -45,8 +46,10 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ✅ Services Section */}
+            {/* Services Section */}
             <ServicesSection />
+            {/* Locations Section */}
+            <LocationSection />
         </>
     );
 }

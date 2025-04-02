@@ -66,17 +66,16 @@ export default function ServicesSection() {
                 </div>
 
                 <div className={`flex justify-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-    <Link
-        to="/services"
-        className="relative overflow-hidden px-8 py-3 rounded-full border border-white text-white font-light tracking-wide no-underline
-                   transition-all duration-300 backdrop-blur-md bg-white/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]
-                   before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/20 before:to-transparent before:opacity-0 
-                   hover:before:opacity-100 before:transition-opacity before:duration-500"
-        style={{ textDecoration: 'none' }}
-    >
-        View All Services
-    </Link>
-</div>
+                    <Link
+                        to="/services"
+                        className="relative overflow-hidden px-8 py-3 rounded-full border border-white text-white font-light tracking-wide no-underline
+                                transition-all duration-300 backdrop-blur-md bg-white/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]
+                                before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/20 before:to-transparent before:opacity-0 
+                                hover:before:opacity-100 before:transition-opacity before:duration-500"
+                        style={{ textDecoration: 'none' }}>
+                        View All Services
+                    </Link>
+                </div>
 
 
             </div>

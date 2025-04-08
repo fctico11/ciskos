@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import service1 from '../assets/icons/furn.png';
 import service2 from '../assets/icons/glassIcon.webp';
 import service3 from '../assets/icons/relocation.webp';
-import service4 from '../assets/icons/furn.png';
+import service4 from '../assets/icons/truck.webp';
 
 export default function ServicesSection() {
     const [visible, setVisible] = useState(false);

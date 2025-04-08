@@ -16,9 +16,22 @@
     letter-spacing: -0.015em;
   }
 
+  html,
+  body {
+  overscroll-behavior: none;
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Chrome/Safari/WebKit */
+}
+
   body {
     @apply font-sans text-base leading-relaxed text-white bg-[#0f0c1d];
     margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -89,4 +102,32 @@
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
 }
 
+/* logo carousel css */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
 

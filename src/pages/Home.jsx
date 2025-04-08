@@ -3,11 +3,22 @@ import logo from "../assets/ciskologo.webp";
 import ServicesSection from '../components/ServicesSection';
 import LocationSection from '../components/LocationSection';
 import LogoCarousel from '../components/LogoCarousel';
+import { Helmet } from 'react-helmet-async';
 
 
 export default function Home() {
     return (
         <>
+            <Helmet>
+                <title>Ciskos | Office Furniture Experts</title>
+                <meta
+                    name="description"
+                    content="Ciskos specializes in professional office furniture installation, relocation, and glass systems across the Tri-State and beyond."
+                />
+                <meta property="og:title" content="Ciskos | Office Furniture Experts" />
+                <meta property="og:description" content="We provide end-to-end installation and logistics for modern office systems in NJ, NY, PA and more." />
+                <meta property="og:type" content="website" />
+            </Helmet>
             {/* Hero Section */}
             <section
                 className="relative w-screen h-screen bg-cover bg-center flex flex-col items-center justify-start pt-28 md:pt-32 text-center"

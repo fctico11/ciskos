@@ -4,6 +4,7 @@ import ServicesSection from '../components/ServicesSection';
 import LocationSection from '../components/LocationSection';
 import LogoCarousel from '../components/LogoCarousel';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 
 
 export default function Home() {
@@ -56,6 +57,16 @@ export default function Home() {
                     <p className="text-lg md:text-xl text-white/80 font-light drop-shadow-[0_1px_1px_rgba(0,0,0,0.7)] mt-2">
                         Turning your visions into reality
                     </p>
+
+                    {/* Get a Quote Button */}
+                    <Link
+                        to="/contact"
+                        className="no-underline-hover mt-4 inline-block px-6 py-3 rounded-full border border-white text-white font-light tracking-wide
+                                backdrop-blur-md bg-white/10 hover:bg-white/20 hover:scale-105
+                                hover:shadow-[0_0_25px_rgba(94,58,255,0.5)] transition-all duration-300 ease-out shadow-md"
+                    >
+                        Get a Quote
+                    </Link>
                 </div>
             </section>
 

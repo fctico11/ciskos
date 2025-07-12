@@ -35,12 +35,17 @@ export default function ServicesSection() {
     ];
 
     return (
-        <section ref={sectionRef} className="w-full bg-gradient-to-b from-[#1e0033] to-[#120025] py-20 px-6 md:px-16 text-white">
+        <section ref={sectionRef} className="w-full bg-white py-20 px-6 md:px-16 text-black">
             <div className="max-w-7xl mx-auto">
 
-                {/* Section Heading */}
-                <div className={`mb-14 text-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-                    <h2 className="text-4xl md:text-5xl font-light tracking-tight">Our Services</h2>
+                {/* Section Heading with dynamic animation */}
+                <div
+                    className={`mb-14 text-center transition-all duration-1000 ease-out
+                    ${visible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95'}`}
+                >
+                    <h2 className="text-black text-4xl md:text-5xl font-light tracking-tight">
+                        Our Services
+                    </h2>
                 </div>
 
                 {/* Services Grid */}
@@ -50,11 +55,11 @@ export default function ServicesSection() {
                             key={i}
                             className={`
                                 flex flex-col items-center text-center space-y-4
-                                bg-white/10 backdrop-blur-md border border-white/20
+                                bg-gradient-to-b from-[#1e0033] to-[#120025] text-white
                                 rounded-xl py-6 px-4
-                                transform transition-all duration-700 ease-out
-                                ${visible ? `opacity-100 translate-y-0` : 'opacity-0 translate-y-6'}
-                                hover:scale-105
+                                transform transition-all duration-500 ease-[cubic-bezier(0.4, 0, 0.2, 1)]
+                                ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
+                                hover:scale-105 hover:shadow-[0_0_30px_rgba(94,58,255,0.4)]
                             `}
                             style={{ transitionDelay: `${i * 100}ms` }}
                         >
@@ -68,15 +73,14 @@ export default function ServicesSection() {
                 <div className={`flex justify-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
                     <Link
                         to="/services"
-                        className="relative overflow-hidden px-8 py-3 rounded-full border border-white text-white font-light tracking-wide no-underline
-                                transition-all duration-300 backdrop-blur-md bg-white/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]
-                                before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/20 before:to-transparent before:opacity-0 
+                        className="relative overflow-hidden px-8 py-3 rounded-full border border-black text-black font-light tracking-wide no-underline
+                                transition-all duration-300 backdrop-blur-md bg-black/5 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,0,0,0.2)]
+                                before:absolute before:inset-0 before:bg-gradient-to-r before:from-black/10 before:to-transparent before:opacity-0 
                                 hover:before:opacity-100 before:transition-opacity before:duration-500"
                         style={{ textDecoration: 'none' }}>
                         View All Services
                     </Link>
                 </div>
-
 
             </div>
         </section>

@@ -18,14 +18,14 @@
 
   html,
   body {
-  overscroll-behavior: none;
-  scrollbar-width: none; /* Firefox */
-}
+    overscroll-behavior: none;
+    scrollbar-width: none; /* Firefox */
+  }
 
-body::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* Chrome/Safari/WebKit */
-}
+  body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* Chrome/Safari/WebKit */
+  }
 
   body {
     @apply font-sans text-base leading-relaxed text-white bg-[#0f0c1d];
@@ -58,7 +58,8 @@ body::-webkit-scrollbar {
     transition: all 0.3s ease;
   }
 
-  a::after {
+  /* Exclude .no-underline-hover links from underline animation */
+  a:not(.no-underline-hover)::after {
     content: "";
     position: absolute;
     left: 0;
@@ -69,14 +70,17 @@ body::-webkit-scrollbar {
     transition: width 0.3s ease;
   }
 
-  a:hover::after {
+  a:not(.no-underline-hover):hover::after {
     width: 100%;
   }
 }
 
 
-/* Added css */
-/* Link underline animation */
+/* --------------------------
+   Additional Styles
+-------------------------- */
+
+/* Desktop link underline animation */
 .desktop-link {
   position: relative;
   color: white;
@@ -102,7 +106,7 @@ body::-webkit-scrollbar {
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* logo carousel css */
+/* Logo carousel fade-in */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -118,6 +122,7 @@ body::-webkit-scrollbar {
   animation: fade-in 1s ease-out forwards;
 }
 
+/* Floating animation */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -130,4 +135,3 @@ body::-webkit-scrollbar {
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
-

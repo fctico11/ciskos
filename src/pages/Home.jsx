@@ -1,5 +1,7 @@
 import heroBg from "../assets/CiskoHeader.webp";
-import logo from "../assets/ciskologo.webp";
+//import logo from "../assets/ciskologo.webp";
+//import logo from "../assets/whitelogo.webp";
+import logo from "../assets/whiteLogoCropped.webp";
 import ServicesSection from '../components/ServicesSection';
 import LocationSection from '../components/LocationSection';
 import LogoCarousel from '../components/LogoCarousel';
@@ -27,15 +29,19 @@ export default function Home() {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/50 md:bg-black/40 z-0" />
 
-                {/* Content */}
-                <div className="relative z-10 flex flex-col items-center space-y-4 px-4">
-
+                {/* Content with gradient background */}
+                <div className="relative z-10 flex flex-col items-center space-y-4 px-4
+                                bg-gradient-to-b from-black/30 via-black/20 to-transparent
+                                rounded-xl p-4 md:p-6">
+                    
                     {/* Logo */}
-                    <img
-                        src={logo}
-                        alt="Ciskos Logo"
-                        className="w-40 md:w-48 drop-shadow-lg mt-6 md:mt-0"
-                    />
+                    <div className="w-40 md:w-48 aspect-[1/1] relative">
+                        <img
+                            src={logo}
+                            alt="Ciskos Logo"
+                            className="absolute inset-0 w-full h-full object-contain drop-shadow-lg"
+                        />
+                    </div>
 
                     {/* Desktop Headline */}
                     <h1 className="hidden md:block text-[3.8rem] font-light tracking-tight text-white drop-shadow-[0_4px_6px_rgba(0,0,0,0.85)]">

@@ -6,7 +6,6 @@ import LogoCarousel from '../components/LogoCarousel';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
-
 export default function Home() {
     return (
         <>
@@ -26,35 +25,35 @@ export default function Home() {
                 style={{ backgroundImage: `url(${heroBg})` }}
             >
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-black/40 z-0" />
+                <div className="absolute inset-0 bg-black/50 md:bg-black/40 z-0" />
 
                 {/* Content */}
-                <div className="relative z-10 flex flex-col items-center space-y-4">
+                <div className="relative z-10 flex flex-col items-center space-y-4 px-4">
 
                     {/* Logo */}
                     <img
                         src={logo}
                         alt="Ciskos Logo"
-                        className="w-40 md:w-48 drop-shadow-lg mt-6 md:mt-0" // ✅ bigger on mobile
+                        className="w-40 md:w-48 drop-shadow-lg mt-6 md:mt-0"
                     />
 
                     {/* Desktop Headline */}
-                    <h1 className="hidden md:block text-[3.5rem] font-light tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
+                    <h1 className="hidden md:block text-[3.8rem] font-light tracking-tight text-white drop-shadow-[0_4px_6px_rgba(0,0,0,0.85)]">
                         Office Furniture Experts - We Do It All
                     </h1>
 
                     {/* Mobile Headline */}
                     <div className="block md:hidden space-y-2">
-                        <h1 className="text-3xl font-normal tracking-tight text-white leading-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
+                        <h1 className="text-[2.2rem] font-normal tracking-tight text-white leading-tight drop-shadow-[0_4px_6px_rgba(0,0,0,0.85)]">
                             Office Furniture Experts
                         </h1>
-                        <h2 className="text-2xl font-normal tracking-tight text-white leading-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
+                        <h2 className="text-[1.7rem] font-normal tracking-tight text-white leading-tight drop-shadow-[0_4px_6px_rgba(0,0,0,0.85)]">
                             We Do It All
                         </h2>
                     </div>
 
                     {/* Subheading */}
-                    <p className="text-lg md:text-xl text-white/80 font-light drop-shadow-[0_1px_1px_rgba(0,0,0,0.7)] mt-2">
+                    <p className="text-lg md:text-2xl text-white/90 font-light drop-shadow-[0_4px_6px_rgba(0,0,0,0.85)] mt-2">
                         Turning your visions into reality
                     </p>
 
@@ -62,8 +61,8 @@ export default function Home() {
                     <Link
                         to="/contact"
                         className="no-underline-hover mt-4 inline-block px-6 py-3 rounded-full border border-white text-white font-light tracking-wide
-                                backdrop-blur-md bg-white/10 hover:bg-white/20 hover:scale-105
-                                hover:shadow-[0_0_25px_rgba(94,58,255,0.5)] transition-all duration-300 ease-out shadow-md"
+                                   backdrop-blur-md bg-white/10 hover:bg-white/20 hover:scale-105
+                                   hover:shadow-[0_0_25px_rgba(94,58,255,0.5)] transition-all duration-300 ease-out shadow-md"
                     >
                         Get a Quote
                     </Link>
@@ -72,7 +71,7 @@ export default function Home() {
 
             {/* Services Section */}
             <ServicesSection />
-            {/*Logos */}
+            {/* Logos */}
             <LogoCarousel />
             {/* Locations Section */}
             <LocationSection />

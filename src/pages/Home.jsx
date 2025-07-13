@@ -75,13 +75,12 @@ export default function Home() {
 
                     {/* Get a Quote Button */}
                     <Link
-                        to="/contact"
-                        className="no-underline-hover mt-4 inline-block px-6 py-3 rounded-full border border-white text-white font-light tracking-wide
-                                   backdrop-blur-md bg-white/10 hover:bg-white/20 hover:scale-105
-                                   hover:shadow-[0_0_25px_rgba(94,58,255,0.5)] transition-all duration-500 ease-out shadow-md animate-fade-slow delay-1000"
-                    >
-                        Get a Quote
-                    </Link>
+    to="/contact"
+    className="no-underline-hover purple-hover-glow mt-4 inline-block px-6 py-3 rounded-full border border-white text-white font-light tracking-wide
+           backdrop-blur-md bg-white/10 transition-all duration-500 ease-out shadow-md animate-fade-slow delay-1000"
+>
+    Get a Quote
+</Link>
                 </div>
             </section>
 

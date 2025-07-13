@@ -1,20 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      // only affect scrolled background on DESKTOP
       if (window.innerWidth >= 768) {
         setScrolled(window.scrollY > 10);
       }
     };
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // 👇 Close drawer automatically on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
 
   return (
     <header
@@ -30,6 +36,7 @@ export default function Header() {
           <Link to="/services" className="desktop-link">Services</Link>
           <Link to="/projects" className="desktop-link">Projects</Link>
           <Link to="/about" className="desktop-link">About</Link>
+          <Link to="/shop" className="desktop-link">Shop</Link>
         </nav>
 
         {/* Contact Button */}
@@ -49,27 +56,46 @@ export default function Header() {
         </button>
       </div>
 
-      {/* ✅ Mobile Drawer (controlled ONLY by isOpen) */}
-      {isOpen && (
-        <div
-          className="fixed top-0 left-0 w-full h-full bg-[#1e0033]/90 backdrop-blur-md transition-all duration-500 flex flex-col items-center justify-center space-y-6 z-50"
+      {/* ✅ Mobile Drawer */}
+      <div
+        className={`fixed top-0 left-0 w-full h-full bg-[#1e0033]/90 backdrop-blur-md transition-transform duration-500 z-50 flex flex-col items-center justify-center space-y-6 ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Close */}
+        <button
+          onClick={() => setIsOpen(false)}
+          className="absolute top-6 right-6 text-3xl text-white"
         >
-          {/* Close */}
-          <button
-            onClick={() => setIsOpen(false)}
-            className="absolute top-6 right-6 text-3xl text-white"
-          >
-            ×
-          </button>
+          ×
+        </button>
 
-          {/* Drawer Links */}
-          <Link to="/" onClick={() => setIsOpen(false)} className="text-white text-xl hover:underline">Home</Link>
-          <Link to="/services" onClick={() => setIsOpen(false)} className="text-white text-xl hover:underline">Services</Link>
-          <Link to="/projects" onClick={() => setIsOpen(false)} className="text-white text-xl hover:underline">Projects</Link>
-          <Link to="/about" onClick={() => setIsOpen(false)} className=" text-white text-xl hover:underline">About</Link>
-          <Link to="/contact" onClick={() => setIsOpen(false)} className="border border-white px-4 py-1 rounded-md text-white hover:bg-white hover:text-black transition">Contact</Link>
-        </div>
-      )}
+        {/* Drawer Links */}
+        {[
+          { to: "/", label: "Home" },
+          { to: "/services", label: "Services" },
+          { to: "/projects", label: "Projects" },
+          { to: "/about", label: "About" },
+          { to: "/shop", label: "Shop" },
+        ].map((link) => (
+          <Link
+            key={link.to}
+            to={link.to}
+            onClick={() => setIsOpen(false)}
+            className="text-white text-xl hover:underline"
+          >
+            {link.label}
+          </Link>
+        ))}
+
+        <Link
+          to="/contact"
+          onClick={() => setIsOpen(false)}
+          className="border border-white px-4 py-1 rounded-md text-white hover:bg-white hover:text-black transition"
+        >
+          Contact
+        </Link>
+      </div>
     </header>
   );
 }

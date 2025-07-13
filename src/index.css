@@ -236,3 +236,12 @@
 .animate-fade-slow {
   animation: fade-slow 1.2s ease-out forwards;
 }
+
+.purple-hover-glow:hover {
+  box-shadow: 0 0 30px rgba(94, 58, 255, 0.6), 0 0 60px rgba(94, 58, 255, 0.3);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.purple-hover-glow {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}

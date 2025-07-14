@@ -39,7 +39,7 @@ export default function LocationSection() {
                     className={`text-center mb-10 transition-all duration-700 ease-out
                         ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                 >
-                    <h2 className="text-black text-3xl md:text-4xl font-semibold">Areas We Serve</h2>
+                    <h2 className="relative text-black text-4xl md:text-5xl font-light tracking-tight ">Areas We Serve</h2>
                     <p className="text-gray-600 mt-1">Covering the Northeast and more</p>
                 </div>
 

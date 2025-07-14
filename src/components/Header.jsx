@@ -17,7 +17,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // 👇 Close drawer automatically on route change
+  // Close drawer automatically on route change
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);

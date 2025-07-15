@@ -3,6 +3,7 @@ import logo from "../assets/whiteLogoCropped.webp";
 import ServicesSection from '../components/ServicesSection';
 import LocationSection from '../components/LocationSection';
 import LogoCarousel from '../components/LogoCarousel';
+import ProjectsPreview from '../components/ProjectsPreview';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
@@ -60,7 +61,7 @@ export default function Home() {
 
                     {/* Mobile Headline */}
                     <div className="block md:hidden space-y-2">
-                        <h1 className="text-[2.2rem] font-normal tracking-tight text-white leading-tight drop-shadow-[0_4px_6px_rgba(0,0,0,0.85)]">
+                        <h1 className="text-[2.3rem] font-normal tracking-tight text-white leading-tight drop-shadow-[0_4px_6px_rgba(0,0,0,0.85)]">
                             {splitText("Office Furniture Experts")}
                         </h1>
                         <h2 className="text-[1.7rem] font-normal tracking-tight text-white leading-tight drop-shadow-[0_4px_6px_rgba(0,0,0,0.85)]">
@@ -75,12 +76,12 @@ export default function Home() {
 
                     {/* Get a Quote Button */}
                     <Link
-    to="/contact"
-    className="no-underline-hover purple-hover-glow mt-4 inline-block px-6 py-3 rounded-full border border-white text-white font-light tracking-wide
-           backdrop-blur-md bg-white/10 transition-all duration-500 ease-out shadow-md animate-fade-slow delay-1000"
->
-    Get a Quote
-</Link>
+                        to="/contact"
+                        className="no-underline-hover purple-hover-glow mt-4 inline-block px-6 py-3 rounded-full border border-white text-white font-light tracking-wide
+                                backdrop-blur-md bg-white/10 transition-all duration-500 ease-out shadow-md animate-fade-slow delay-1000"
+                    >
+                        Get a Quote
+                    </Link>
                 </div>
             </section>
 
@@ -88,8 +89,14 @@ export default function Home() {
             <ServicesSection />
             {/* Logos */}
             <LogoCarousel />
+
+            {/* Projects Preview Section */}
+            <ProjectsPreview />
+
+            {/* Spacer */}
             {/* Locations Section */}
             <LocationSection />
+
         </>
     );
 }

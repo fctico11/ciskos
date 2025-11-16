@@ -29,17 +29,18 @@ export default function LocationSection() {
     return (
         <section
             ref={sectionRef}
-            className={`w-full bg-white py-12 px-6 md:px-16 text-black transition-all duration-700 ease-out
-                ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+            className="w-full bg-[#f8f5ff] py-12 px-6 md:px-16 text-black"
         >
             <div className="max-w-5xl mx-auto">
 
                 {/* Title & Subtitle */}
                 <div
                     className={`text-center mb-10 transition-all duration-700 ease-out
-                        ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                        ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
                 >
-                    <h2 className="relative text-black text-4xl md:text-5xl font-light tracking-tight ">Areas We Serve</h2>
+                    <h2 className="relative text-black text-4xl md:text-5xl font-light tracking-tight ">
+                        Areas We Serve
+                    </h2>
                     <p className="text-gray-600 mt-1">Covering the Northeast and more</p>
                 </div>
 
@@ -55,8 +56,7 @@ export default function LocationSection() {
                             key={i}
                             className={`flex items-center justify-between space-x-4 border-b border-gray-200 pb-4 group
                                 transition-all duration-700 ease-out
-                                ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
-                            `}
+                                ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
                             style={{ transitionDelay: `${i * 150}ms` }}
                         >
                             <div className="flex items-center space-x-3">
@@ -70,7 +70,9 @@ export default function LocationSection() {
                                     {item.title}
                                 </h3>
                             </div>
-                            <p className="text-gray-500 text-sm md:text-base text-right max-w-xs">{item.desc}</p>
+                            <p className="text-gray-500 text-sm md:text-base text-right max-w-xs">
+                                {item.desc}
+                            </p>
                         </div>
                     ))}
                 </div>

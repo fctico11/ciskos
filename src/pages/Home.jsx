@@ -4,6 +4,8 @@ import ServicesSection from '../components/ServicesSection';
 import LocationSection from '../components/LocationSection';
 import LogoCarousel from '../components/LogoCarousel';
 import ProjectsPreview from '../components/ProjectsPreview';
+import Testimonials from '../components/Testimonials';
+import Cta from '../components/Cta';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
@@ -96,6 +98,10 @@ export default function Home() {
             {/* Spacer */}
             {/* Locations Section */}
             <LocationSection />
+            {/* Testimonials Section */}
+            <Testimonials />
+            {/* Call to Action Section */}
+            <Cta />
 
         </>
     );

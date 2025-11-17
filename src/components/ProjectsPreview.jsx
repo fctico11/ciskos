@@ -30,11 +30,13 @@ export default function ProjectsPreview() {
             img: img1133,
             title: 'Floor to Ceiling and Everything In Between',
             desc: 'A stunning living wall installation transforming modern office space. From layout planning to seamless system integration, this project exemplifies our full-scope capabilities and attention to design, detail, and delivery at every stage.',
+            tour: true // mark only first card
         },
         {
             img: privateOffice,
             title: 'Private Office Buildout',
             desc: 'Complete transformation of a high-end private executive office suite with custom finishes. This build featured sleek furnishings, integrated tech, and a refined atmosphere tailored to leadership-level comfort and productivity.',
+            tour: false
         },
     ];
 
@@ -45,6 +47,7 @@ export default function ProjectsPreview() {
                 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
             <div className="max-w-6xl mx-auto">
+
                 {/* Title & Subtitle */}
                 <div
                     className={`text-center mb-12 transition-all duration-700 ease-out
@@ -61,7 +64,7 @@ export default function ProjectsPreview() {
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            className={`group rounded-xl overflow-hidden shadow-md border border-[#5e3aff33] transition-all duration-700 ease-in-out
+                            className={`group rounded-xl overflow-hidden shadow-md border border-[#5e3aff33] transition-all duration-700 ease-in-out relative
                                 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
                                 hover:shadow-purple-400/40 hover:shadow-lg hover:-translate-y-1`}
                             style={{ transitionDelay: `${index * 150}ms` }}
@@ -71,19 +74,47 @@ export default function ProjectsPreview() {
                                 alt={project.title}
                                 className="w-full h-64 md:h-80 object-cover object-center transform group-hover:scale-105 group-hover:rotate-1 transition-transform duration-500 ease-out"
                             />
-                            <div className="p-5 bg-[#f9f6f2] rounded-b-xl border-t border-gray-200">
+
+                            <div className="p-5 bg-[#f9f6f2] rounded-b-xl border-t border-gray-200 pb-14">
                                 <h3 className="text-lg md:text-xl font-semibold text-[#493423] mb-1">
                                     {project.title}
                                 </h3>
                                 <p className="text-sm text-gray-700">{project.desc}</p>
+
+                                {/* Only show button on first card */}
+                                {index === 0 && (
+                                    <a
+                                        href="https://www.clariant.com/dassets/ics/ccic-virtual-tour/index.htm"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="
+                                            no-underline-hover
+                                            after:hidden
+                                            absolute bottom-4 left-1/2 -translate-x-1/2 
+                                            px-4 py-1.5 rounded-full text-sm font-medium text-white
+                                            bg-[#3a1593]
+                                            transition-all duration-300
+                                            shadow-md
+                                            hover:shadow-[0_0_14px_#6a3fff]
+                                            hover:bg-[#3a1593]
+                                        "
+                                        style={{
+                                            textDecoration: "none",
+                                        }}
+                                    >
+                                        Take Virtual Tour 
+                                    </a>
+                                )}
                             </div>
                         </div>
                     ))}
                 </div>
 
-                {/* Matched Button */}
+                {/* Footer Button */}
                 <div
-                    className={`flex justify-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+                    className={`flex justify-center transition-all duration-700 ${
+                        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                    }`}
                 >
                     <Link
                         to="/projects"
@@ -96,6 +127,7 @@ export default function ProjectsPreview() {
                         See More Projects <span className="ml-2">→</span>
                     </Link>
                 </div>
+
             </div>
         </section>
     );

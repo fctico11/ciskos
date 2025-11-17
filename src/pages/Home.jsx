@@ -85,6 +85,16 @@ export default function Home() {
                         Get a Quote
                     </Link>
                 </div>
+                {/* Scroll Indicator */}
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+                    <div className="w-10 h-10 flex items-center justify-center rounded-full
+                                    bg-white/20 backdrop-blur-md border border-white/30
+                                    shadow-[0_0_12px_rgba(255,255,255,0.5)]">
+                        <span className="text-white text-2xl leading-none drop-shadow-md">
+                            ↓
+                        </span>
+                    </div>
+                </div>
             </section>
 
             {/* Services Section */}

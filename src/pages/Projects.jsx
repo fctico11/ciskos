@@ -232,15 +232,6 @@ export default function Projects() {
           {/* RIGHT COLUMN */}
           <div className="text-gray-800 md:pl-8">
 
-            <h2 className="text-2xl font-semibold mb-4 text-black">
-              Environmental Statistics
-            </h2>
-            <ul className="list-disc ml-6 mb-8 leading-relaxed">
-              <li>Over 9,360 lbs of construction waste diverted from landfill</li>
-              <li>38 lbs VOCs prevented from off-gassing</li>
-              <li>68% recycled content in wall solution</li>
-              <li>4% bio-based content in wall solution</li>
-            </ul>
 
             <h2 className="text-2xl font-semibold mb-4 text-black">Project Details</h2>
             <ul className="list-disc ml-6 mb-8 leading-relaxed">
@@ -251,6 +242,18 @@ export default function Projects() {
               <li>Full AV + workplace technology integration</li>
               <li>Film + imaging: graphics, switch film, wallcovering</li>
             </ul>
+            
+            <h2 className="text-2xl font-semibold mb-4 text-black">
+              Environmental Statistics
+            </h2>
+            <ul className="list-disc ml-6 mb-8 leading-relaxed">
+              <li>Over 9,360 lbs of construction waste diverted from landfill</li>
+              <li>38 lbs VOCs prevented from off-gassing</li>
+              <li>68% recycled content in wall solution</li>
+              <li>4% bio-based content in wall solution</li>
+            </ul>
+
+            
 
             <h2 className="text-2xl font-semibold mb-4 text-black">
               Technology Solutions

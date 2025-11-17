@@ -25,12 +25,14 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-        scrolled && window.innerWidth >= 768 ? "bg-[#1e0033]/80 backdrop-blur-md" : "bg-transparent"
+        scrolled && window.innerWidth >= 768
+          ? "bg-[#1e0033]/80 backdrop-blur-md"
+          : "bg-transparent"
       }`}
     >
       <div className="relative flex justify-center items-center px-6 md:px-12 py-4 w-full">
 
-        {/* Centered Desktop Nav */}
+        {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-10 text-sm font-medium text-white">
           <Link to="/" className="desktop-link">Home</Link>
           <Link to="/services" className="desktop-link">Services</Link>
@@ -39,7 +41,7 @@ export default function Header() {
           <Link to="/shop" className="desktop-link">Shop</Link>
         </nav>
 
-        {/* Contact Button */}
+        {/* Desktop Contact Button */}
         <Link
           to="/contact"
           className="hidden md:inline-block absolute right-12 border border-white px-4 py-1 rounded-md text-white hover:bg-white hover:text-black transition"
@@ -47,25 +49,32 @@ export default function Header() {
           Contact
         </Link>
 
-        {/* Burger Icon */}
+        {/* Mobile Burger Icon */}
         <button
           onClick={() => setIsOpen(true)}
-          className="md:hidden text-white text-3xl absolute right-6 top-1/2 transform -translate-y-1/2"
+          className="md:hidden absolute right-2 top-[0.4rem]   /* pushed down */
+                    text-white text-2xl
+                    w-11 h-11 rounded-full
+                    flex items-center justify-center
+                    bg-[#5e3aff55] backdrop-blur-md      /* darker semi-transparent purple */
+                    shadow-sm border border-white/10"
         >
           ☰
         </button>
       </div>
 
-      {/* ✅ Mobile Drawer */}
+      {/* 📱 Mobile Drawer */}
       <div
         className={`fixed top-0 left-0 w-full h-full bg-[#1e0033]/90 backdrop-blur-md transition-transform duration-500 z-50 flex flex-col items-center justify-center space-y-6 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Close */}
+        {/* Close Button (same circle style for consistency) */}
         <button
           onClick={() => setIsOpen(false)}
-          className="absolute top-6 right-6 text-3xl text-white"
+          className="absolute top-6 right-6 text-white text-3xl
+                     w-10 h-10 rounded-full flex items-center justify-center
+                     bg-[#5e3aff33] backdrop-blur-sm border border-white/10 shadow-sm"
         >
           ×
         </button>
@@ -88,6 +97,7 @@ export default function Header() {
           </Link>
         ))}
 
+        {/* Drawer Contact */}
         <Link
           to="/contact"
           onClick={() => setIsOpen(false)}

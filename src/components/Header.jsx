@@ -41,10 +41,10 @@ export default function Header() {
           <Link to="/shop" className="desktop-link">Shop</Link>
         </nav>
 
-        {/* Desktop Contact Button */}
+        {/* Desktop Contact Button (NO underline) */}
         <Link
           to="/contact"
-          className="hidden md:inline-block absolute right-12 border border-white px-4 py-1 rounded-md text-white hover:bg-white hover:text-black transition"
+          className="no-underline-hover hidden md:inline-block absolute right-12 border border-white px-4 py-1 rounded-md text-white hover:bg-white hover:text-black transition"
         >
           Contact
         </Link>
@@ -52,12 +52,11 @@ export default function Header() {
         {/* Mobile Burger Icon */}
         <button
           onClick={() => setIsOpen(true)}
-          className="md:hidden absolute right-2 top-[0.4rem]   /* pushed down */
-                    text-white text-2xl
-                    w-11 h-11 rounded-full
-                    flex items-center justify-center
-                    bg-[#5e3aff55] backdrop-blur-md      /* darker semi-transparent purple */
-                    shadow-sm border border-white/10"
+          className="md:hidden absolute right-2 top-[0.4rem]
+                     text-white text-2xl w-11 h-11 rounded-full
+                     flex items-center justify-center
+                     bg-[#5e3aff55] backdrop-blur-md
+                     shadow-sm border border-white/10"
         >
           ☰
         </button>
@@ -69,7 +68,7 @@ export default function Header() {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Close Button (same circle style for consistency) */}
+        {/* Close Button */}
         <button
           onClick={() => setIsOpen(false)}
           className="absolute top-6 right-6 text-white text-3xl
@@ -79,7 +78,7 @@ export default function Header() {
           ×
         </button>
 
-        {/* Drawer Links */}
+        {/* Drawer Links (Underline allowed) */}
         {[
           { to: "/", label: "Home" },
           { to: "/services", label: "Services" },
@@ -91,17 +90,17 @@ export default function Header() {
             key={link.to}
             to={link.to}
             onClick={() => setIsOpen(false)}
-            className="text-white text-xl hover:underline"
+            className="text-white text-xl relative"
           >
             {link.label}
           </Link>
         ))}
 
-        {/* Drawer Contact */}
+        {/* Drawer Contact (NO underline EVER) */}
         <Link
           to="/contact"
           onClick={() => setIsOpen(false)}
-          className="border border-white px-4 py-1 rounded-md text-white hover:bg-white hover:text-black transition"
+          className="no-underline-hover border border-white px-4 py-1 rounded-md text-white hover:bg-white hover:text-black transition"
         >
           Contact
         </Link>

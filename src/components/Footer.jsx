@@ -74,17 +74,17 @@ export default function Footer() {
                     <ul className="space-y-3 text-white/70 text-sm">
                         <li>
                             Email:{" "}
-                            <a href="mailto:info@ciskos.com" className="hover:text-white">
-                                info@ciskos.com
+                            <a href="mailto:cisko11@yahoo.com" className="hover:text-white">
+                                cisko11@yahoo.com
                             </a>
                         </li>
                         <li>
                             Phone:{" "}
-                            <a href="tel:2015551234" className="hover:text-white">
-                                (201) 555-1234
+                            <a href="tel:9088347418" className="hover:text-white">
+                                (908) 834-7418
                             </a>
                         </li>
-                        <li>Office: Elizabeth, NJ</li>
+                        <li>Warehouse: Elizabeth, NJ</li>
                     </ul>
                 </div>
             </div>

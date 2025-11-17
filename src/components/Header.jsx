@@ -78,25 +78,36 @@ export default function Header() {
           ×
         </button>
 
-        {/* Drawer Links (Underline allowed) */}
+        {/* Drawer Links */}
         {[
           { to: "/", label: "Home" },
           { to: "/services", label: "Services" },
           { to: "/projects", label: "Projects" },
           { to: "/about", label: "About" },
           { to: "/shop", label: "Shop" },
-        ].map((link) => (
-          <Link
-            key={link.to}
-            to={link.to}
-            onClick={() => setIsOpen(false)}
-            className="text-white text-xl relative"
-          >
-            {link.label}
-          </Link>
-        ))}
+        ].map((link) => {
+          const isActive = location.pathname === link.to;
 
-        {/* Drawer Contact (NO underline EVER) */}
+          return (
+            <Link
+              key={link.to}
+              to={link.to}
+              onClick={() => setIsOpen(false)}
+              className={`
+                text-white text-xl relative pb-1 
+                ${isActive ? "font-semibold" : ""}
+                ${isActive 
+                  ? "no-underline-hover after:w-full after:h-[2px] after:bg-[#b499ff] after:absolute after:left-0 after:-bottom-1 after:rounded-full"
+                  : ""
+                }
+              `}
+            >
+              {link.label}
+            </Link>
+          );
+        })}
+
+        {/* Drawer Contact — NEVER underlined */}
         <Link
           to="/contact"
           onClick={() => setIsOpen(false)}

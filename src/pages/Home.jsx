@@ -63,7 +63,7 @@ export default function Home() {
 
                     {/* Mobile Headline */}
                     <div className="block md:hidden space-y-2">
-                        <h1 className="text-[2.3rem] font-normal tracking-tight text-white leading-tight drop-shadow-[0_4px_6px_rgba(0,0,0,0.85)]">
+                        <h1 className="text-[2rem] xs:text-[2.15rem] font-normal tracking-[-0.5px] text-white leading-[1.05] drop-shadow-[0_4px_6px_rgba(0,0,0,0.85)]">
                             {splitText("Office Furniture Experts")}
                         </h1>
                         <h2 className="text-[1.7rem] font-normal tracking-tight text-white leading-tight drop-shadow-[0_4px_6px_rgba(0,0,0,0.85)]">

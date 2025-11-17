@@ -40,15 +40,15 @@ export default function Testimonials() {
     };
 
     return (
-        <section className="w-full bg-white py-16 px-6 md:px-16 text-black">
+        <section className="w-full bg-white py-14 px-6 md:px-16 text-black">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-10">
                 {/* Left: Title + Description */}
                 <div className="md:w-5/12">
-                    <h2 className="text-3xl md:text-4xl font-light tracking-tight text-black">
+                    <h2 className="text-3xl md:text-4xl font-light tracking-tight text-black text-center md:text-left">
                         Client Testimonials
                     </h2>
-                    <p className="text-gray-600 text-sm md:text-base leading-relaxed mt-5">
-                        Here is how past clients feel about our services — from
+                    <p className="text-gray-600 text-sm md:text-base leading-relaxed mt-5 text-center md:text-left">
+                        Here is how past clients feel about our services: from
                         dealers to direct end-users. We focus on clear
                         communication, clean installations, and staying aligned
                         with your schedule, specs, and standards at every step

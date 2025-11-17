@@ -35,7 +35,7 @@ export default function ServicesSection() {
     ];
 
     return (
-        <section ref={sectionRef} className="w-full bg-white py-20 px-6 md:px-16 text-black">
+        <section ref={sectionRef} className="w-full bg-white py-14 px-6 md:px-16 text-black">
             <div className="max-w-7xl mx-auto">
 
                 {/* Section Heading with dynamic animation */}
@@ -46,6 +46,13 @@ export default function ServicesSection() {
                     <h2 className="text-black text-4xl md:text-5xl font-light tracking-tight">
                         Our Services
                     </h2>
+                    <p className="text-gray-600 max-w-3xl mx-auto mt-4 text-sm md:text-base leading-relaxed">
+                        Ciskos provides complete office furniture installation and workspace solutions for commercial
+                        offices, corporate environments, and dealer-supported projects across the Tri-State Area. From 
+                        workstation installs and architectural glass systems to relocation services and product receiving, 
+                        our team delivers reliable, detail-driven work that keeps your project on schedule and aligned with 
+                        manufacturer standards.
+                    </p>
                 </div>
 
                 {/* Services Grid */}

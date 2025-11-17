@@ -111,9 +111,21 @@ export default function Projects() {
 
             {/* TITLE + UNDERLINE */}
             <div className="mb-5 inline-block">
-              <h1 className="text-black text-4xl md:text-5xl font-light inline-block">
-                Clariant Project
-              </h1>
+              <h1 className="flex items-center gap-3">
+                <span className="text-black text-4xl md:text-5xl font-light">
+                  Clariant
+                </span>
+
+                {/* smaller dot */}
+                <span className="text-gray-400 text-base md:text-lg leading-none">
+                  •
+                </span>
+
+                {/* smaller grey location text */}
+                <span className="text-gray-500 text-sm md:text-base font-light">
+                  New Providence, NJ
+                </span>
+            </h1>
               <div className="mt-2 h-[3px] bg-[#5b21b6] w-full rounded-full"></div>
             </div>
 

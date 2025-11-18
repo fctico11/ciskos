@@ -4,8 +4,8 @@ export default function Contact() {
         <h1 className="text-3xl font-bold">Contact Us</h1>
         <p>Get in touch to discuss your next project.</p>
         <ul className="space-y-2">
-          <li>Email: info@ciskos.com</li>
-          <li>Phone: (555) 123-4567</li>
+          <li>Email: ciisko11@yahoo.com</li>
+          <li>Phone: (908) 834-7418</li>
           <li>Location: Serving New Jersey and surrounding areas</li>
         </ul>
       </div>

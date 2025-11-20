@@ -48,6 +48,19 @@ const logisticsServices = [
   },
 ];
 
+const furnitureManufacturers = [
+  'Herman Miller',
+  'Steelcase',
+  'Knoll',
+  'Haworth',
+  'Teknion',
+  'Allsteel',
+  'Kimball',
+  'National',
+  'Bernhardt',
+  'Davis',
+];
+
 // --- Components ---
 
 const FadeInSection = ({ children, className = '', delay = 0 }) => {
@@ -77,10 +90,57 @@ const FadeInSection = ({ children, className = '', delay = 0 }) => {
   );
 };
 
+const ServiceModal = ({ isOpen, onClose, title, children }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
+        onClick={onClose}
+      />
+      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto animate-modal-simple">
+        {/* Background Gradient/Pattern */}
+
+
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-2 text-gray-400 hover:text-black transition-colors z-10"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <div className="p-8 md:p-12">
+          <h3 className="text-3xl md:text-4xl font-light mb-6 text-black">{title}</h3>
+          <div className="text-gray-600 leading-relaxed space-y-6">
+            {children}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function ServicesPage() {
+  const [activeModal, setActiveModal] = useState(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (activeModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [activeModal]);
 
   return (
     <>
@@ -96,8 +156,8 @@ export default function ServicesPage() {
         <Header />
 
         {/* --- Hero Section --- */}
-        {/* Increased top padding to create space between header and text */}
-        <section className="w-full bg-[#1e0033] text-white pt-[220px] pb-[100px] px-6 relative overflow-hidden">
+        {/* Reduced top padding based on user feedback */}
+        <section className="w-full bg-[#1e0033] text-white pt-[150px] pb-[80px] px-6 relative overflow-hidden">
           {/* Abstract Background Shape */}
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-[#5e3aff]/20 to-transparent pointer-events-none" />
 
@@ -146,7 +206,10 @@ export default function ServicesPage() {
                     <p className="text-lg text-gray-600 leading-relaxed">
                       Precision installation for all workspace elements. From ancillary furniture and workstations to complex panel systems and lockers, we ensure every piece is placed to perfection. Our team is trained to handle products from all major manufacturers with care and efficiency.
                     </p>
-                    <button className="text-[#5e3aff] font-medium hover:text-[#4a2bc2] transition-colors flex items-center gap-2 group">
+                    <button
+                      onClick={() => setActiveModal('furniture')}
+                      className="text-[#5e3aff] font-medium hover:text-[#4a2bc2] transition-colors flex items-center gap-2 group"
+                    >
                       Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </button>
                   </div>
@@ -211,8 +274,8 @@ export default function ServicesPage() {
 
           <div className="max-w-7xl mx-auto relative z-10">
             <FadeInSection>
-              <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div>
+              <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 text-center md:text-left">
+                <div className="w-full md:w-auto">
                   <h2 className="text-3xl md:text-5xl font-light mb-2">Logistics & Support</h2>
                   <p className="text-white/60 text-lg">The backbone of a successful project.</p>
                 </div>
@@ -224,7 +287,7 @@ export default function ServicesPage() {
               {logisticsServices.map((service, idx) => (
                 <FadeInSection key={idx} delay={idx * 100}>
                   <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors duration-300 h-full">
-                    <h3 className="text-xl font-semibold mb-3 text-white">
+                    <h3 className="text-xl font-semibold mb-3 text-yellow-400">
                       {service.title}
                     </h3>
                     <p className="text-white/70 text-sm leading-relaxed">
@@ -238,6 +301,42 @@ export default function ServicesPage() {
         </section>
 
         <Cta />
+
+        {/* --- Modals --- */}
+        <ServiceModal
+          isOpen={activeModal === 'furniture'}
+          onClose={() => setActiveModal(null)}
+          title="Furniture Installation"
+        >
+          <div className="space-y-10">
+            <div className="animate-slide-up" style={{ animationDelay: '100ms' }}>
+              <h4 className="text-2xl font-semibold text-[#5e3aff] mb-4">Our Process</h4>
+              <p className="text-lg text-gray-700">
+                We are involved in the whole process from field dimensions to punch lists. Our project managers work closely with your team to ensure every detail is accounted for. We verify site conditions, coordinate delivery schedules, and manage the installation with precision to minimize downtime and ensure a flawless execution.
+              </p>
+            </div>
+
+            <div className="animate-slide-up" style={{ animationDelay: '200ms' }}>
+              <h4 className="text-2xl font-semibold text-[#5e3aff] mb-6">Manufacturers & Systems</h4>
+              <p className="mb-6 text-lg text-gray-700">
+                Our certified installers are experienced with a wide range of furniture systems and products from leading manufacturers, including:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {furnitureManufacturers.map((brand, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-[#5e3aff]/5 transition-colors duration-300 group animate-fade-in"
+                    style={{ animationDelay: `${300 + (idx * 50)}ms` }}
+                  >
+                    <span className="w-2 h-2 bg-[#5e3aff] rounded-full group-hover:scale-150 transition-transform" />
+                    <span className="text-xl font-medium text-gray-800 group-hover:text-[#5e3aff] transition-colors">{brand}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </ServiceModal>
+
       </div>
     </>
   );

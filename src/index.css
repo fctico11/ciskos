@@ -8,71 +8,95 @@
    Base Typography System
 -------------------------- */
 @layer base {
-  html {
-    font-family: 'Satoshi', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-variation-settings: 'wght' 400;
-    letter-spacing: -0.015em;
-  }
+    html {
+        font-family: 'Satoshi', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-variation-settings: 'wght' 400;
+        letter-spacing: -0.015em;
+    }
 
-  html,
-  body {
-    overscroll-behavior: none;
-    scrollbar-width: none; /* Firefox */
-  }
+    html,
+    body {
+        overscroll-behavior: none;
+        scrollbar-width: none;
+        /* Firefox */
+    }
 
-  body::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* Chrome/Safari/WebKit */
-  }
+    body::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+        /* Chrome/Safari/WebKit */
+    }
 
-  body {
-    @apply font-sans text-base leading-relaxed text-white bg-[#0f0c1d];
-    margin: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
+    body {
+        @apply font-sans text-base leading-relaxed text-white bg-[#0f0c1d];
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-semibold text-white;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.5em;
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-sans font-semibold text-white;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.5em;
+    }
 
-  h1 { @apply text-4xl md:text-5xl; }
-  h2 { @apply text-3xl md:text-4xl; }
-  h3 { @apply text-2xl md:text-3xl; }
-  h4 { @apply text-xl md:text-2xl; }
-  h5 { @apply text-lg md:text-xl; }
-  h6 { @apply text-base md:text-lg; }
+    h1 {
+        @apply text-4xl md:text-5xl;
+    }
 
-  p {
-    @apply text-base leading-relaxed text-white/90;
-    margin-bottom: 1em;
-  }
+    h2 {
+        @apply text-3xl md:text-4xl;
+    }
 
-  a {
-    @apply font-medium text-white no-underline relative;
-    transition: all 0.3s ease;
-  }
+    h3 {
+        @apply text-2xl md:text-3xl;
+    }
 
-  /* Exclude .no-underline-hover links from underline animation */
-  a:not(.no-underline-hover)::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0%;
-    height: 1px;
-    background: white;
-    transition: width 0.3s ease;
-  }
+    h4 {
+        @apply text-xl md:text-2xl;
+    }
 
-  a:not(.no-underline-hover):hover::after {
-    width: 100%;
-  }
+    h5 {
+        @apply text-lg md:text-xl;
+    }
+
+    h6 {
+        @apply text-base md:text-lg;
+    }
+
+    p {
+        @apply text-base leading-relaxed text-white/90;
+        margin-bottom: 1em;
+    }
+
+    a {
+        @apply font-medium text-white no-underline relative;
+        transition: all 0.3s ease;
+    }
+
+    /* Exclude .no-underline-hover links from underline animation */
+    a:not(.no-underline-hover)::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0%;
+        height: 1px;
+        background: white;
+        transition: width 0.3s ease;
+    }
+
+    a:not(.no-underline-hover):hover::after {
+        width: 100%;
+    }
 }
 
 
@@ -82,166 +106,193 @@
 
 /* Desktop link underline animation */
 .desktop-link {
-  position: relative;
-  color: white;
-  text-decoration: none;
+    position: relative;
+    color: white;
+    text-decoration: none;
 }
 
 .desktop-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0%;
-  height: 1px;
-  background: white;
-  transition: width 0.3s ease;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 1px;
+    background: white;
+    transition: width 0.3s ease;
 }
 
 .desktop-link:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
 .hero-text-shadow {
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
 }
 
 /* Logo carousel fade-in */
 @keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-fade-in {
-  animation: fade-in 1s ease-out forwards;
+    animation: fade-in 1s ease-out forwards;
 }
 
 /* Floating animation */
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
 }
 
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
 }
 
 /* Custom Animations */
 @keyframes fade-zoom {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @keyframes slide-up {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fade-scale {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .animate-fade-zoom {
-  animation: fade-zoom 1s ease-out forwards;
+    animation: fade-zoom 1s ease-out forwards;
 }
 
 .animate-slide-up {
-  animation: slide-up 1s ease-out forwards;
+    animation: slide-up 1s ease-out forwards;
 }
 
 .animate-fade-scale {
-  animation: fade-scale 1s ease-out forwards;
+    animation: fade-scale 1s ease-out forwards;
 }
 
 .delay-200 {
-  animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 
 .delay-400 {
-  animation-delay: 0.4s;
+    animation-delay: 0.4s;
 }
 
 .delay-600 {
-  animation-delay: 0.6s;
+    animation-delay: 0.6s;
 }
 
 @keyframes letter-fade {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-letter-fade {
-  animation: letter-fade 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: letter-fade 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes fade-zoom-slow {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .animate-fade-zoom-slow {
-  animation: fade-zoom-slow 1.2s ease-out forwards;
+    animation: fade-zoom-slow 1.2s ease-out forwards;
 }
 
 @keyframes fade-slow {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .animate-fade-slow {
-  animation: fade-slow 1.2s ease-out forwards;
+    animation: fade-slow 1.2s ease-out forwards;
 }
 
 .purple-hover-glow:hover {
-  box-shadow: 0 0 30px rgba(94, 58, 255, 0.6), 0 0 60px rgba(94, 58, 255, 0.3);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
+    box-shadow: 0 0 30px rgba(94, 58, 255, 0.6), 0 0 60px rgba(94, 58, 255, 0.3);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
 .purple-hover-glow {
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+/* --- Simple Modal Animation --- */
+@keyframes modal-simple {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-modal-simple {
+    animation: modal-simple 0.3s ease-out forwards;
 }

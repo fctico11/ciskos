@@ -99,7 +99,7 @@ const ServiceModal = ({ isOpen, onClose, title, children }) => {
         className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
         onClick={onClose}
       />
-      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto animate-modal-simple">
+      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
         {/* Background Gradient/Pattern */}
 
 
@@ -157,15 +157,14 @@ export default function ServicesPage() {
 
         {/* --- Hero Section --- */}
         {/* Reduced top padding based on user feedback */}
-        <section className="w-full bg-[#1e0033] text-white pt-[150px] pb-[80px] px-6 relative overflow-hidden">
+        <section className="w-full bg-[#1e0033] text-white pt-[100px] pb-[40px] px-6 relative overflow-hidden">
           {/* Abstract Background Shape */}
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-[#5e3aff]/20 to-transparent pointer-events-none" />
 
-          <div className="max-w-5xl mx-auto text-center relative z-10">
-            <h1 className="text-5xl md:text-7xl font-light mb-8 tracking-tight animate-fade-in">
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <h1 className="text-4xl md:text-6xl font-light mb-6 tracking-tight animate-fade-in">
               Our Services
             </h1>
-            <p className="text-white/80 text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto font-light animate-slide-up delay-200">
+            <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-light animate-slide-up delay-200">
               Comprehensive solutions for the modern workspace. <br className="hidden md:block" />
               Executed with precision, care, and a commitment to excellence.
             </p>
@@ -225,7 +224,10 @@ export default function ServicesPage() {
                     <p className="text-lg text-gray-600 leading-relaxed">
                       Seamless transitions for your evolving business. We manage every detail of your move—packing, transport, and setup—so you can focus on what matters most. Whether you are moving across the hall or across the state, we have you covered.
                     </p>
-                    <button className="text-[#5e3aff] font-medium hover:text-[#4a2bc2] transition-colors flex items-center gap-2 group">
+                    <button
+                      onClick={() => setActiveModal('relocation')}
+                      className="text-[#5e3aff] font-medium hover:text-[#4a2bc2] transition-colors flex items-center gap-2 group"
+                    >
                       Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </button>
                   </div>
@@ -309,14 +311,14 @@ export default function ServicesPage() {
           title="Furniture Installation"
         >
           <div className="space-y-10">
-            <div className="animate-slide-up" style={{ animationDelay: '100ms' }}>
+            <div>
               <h4 className="text-2xl font-semibold text-[#5e3aff] mb-4">Our Process</h4>
               <p className="text-lg text-gray-700">
                 We are involved in the whole process from field dimensions to punch lists. Our project managers work closely with your team to ensure every detail is accounted for. We verify site conditions, coordinate delivery schedules, and manage the installation with precision to minimize downtime and ensure a flawless execution.
               </p>
             </div>
 
-            <div className="animate-slide-up" style={{ animationDelay: '200ms' }}>
+            <div>
               <h4 className="text-2xl font-semibold text-[#5e3aff] mb-6">Manufacturers & Systems</h4>
               <p className="mb-6 text-lg text-gray-700">
                 Our certified installers are experienced with a wide range of furniture systems and products from leading manufacturers, including:
@@ -325,11 +327,50 @@ export default function ServicesPage() {
                 {furnitureManufacturers.map((brand, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-[#5e3aff]/5 transition-colors duration-300 group animate-fade-in"
-                    style={{ animationDelay: `${300 + (idx * 50)}ms` }}
+                    className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-[#5e3aff]/5 transition-colors duration-300 group"
                   >
                     <span className="w-2 h-2 bg-[#5e3aff] rounded-full group-hover:scale-150 transition-transform" />
                     <span className="text-xl font-medium text-gray-800 group-hover:text-[#5e3aff] transition-colors">{brand}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </ServiceModal>
+
+        <ServiceModal
+          isOpen={activeModal === 'relocation'}
+          onClose={() => setActiveModal(null)}
+          title="Office Relocation"
+        >
+          <div className="space-y-10">
+            <div>
+              <h4 className="text-2xl font-semibold text-[#5e3aff] mb-4">Seamless Transitions</h4>
+              <p className="text-lg text-gray-700">
+                Moving your office shouldn't mean pausing your business. Our relocation experts handle every aspect of the move, from detailed planning and packing to secure transport and efficient setup at your new location. We ensure your technology, furniture, and files are moved safely and organized exactly how you need them.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-2xl font-semibold text-[#5e3aff] mb-6">Relocation Services</h4>
+              <p className="mb-6 text-lg text-gray-700">
+                We offer a comprehensive suite of relocation services tailored to your specific needs:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  'Project Management',
+                  'Packing & Unpacking',
+                  'IT & Server Relocation',
+                  'Furniture Disassembly/Reassembly',
+                  'Secure Crate Rental',
+                  'Post-Move Support'
+                ].map((service, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-[#5e3aff]/5 transition-colors duration-300 group"
+                  >
+                    <span className="w-2 h-2 bg-[#5e3aff] rounded-full group-hover:scale-150 transition-transform" />
+                    <span className="text-xl font-medium text-gray-800 group-hover:text-[#5e3aff] transition-colors">{service}</span>
                   </div>
                 ))}
               </div>

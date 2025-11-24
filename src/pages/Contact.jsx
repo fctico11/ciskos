@@ -254,21 +254,12 @@ export default function Contact() {
 
             {/* --- INFO SECTION --- */}
             {/* Mobile: Standard. Desktop: Col-span-5, Dark Block, Offset. */}
-            <div className="order-2 lg:col-span-5 bg-[#0f0c1d] relative text-white flex flex-col justify-center px-6 md:px-16 py-20 lg:py-0 overflow-hidden">
-              {/* Background Image with Overlay */}
-              <div className="absolute inset-0 z-0 animate-fade-in delay-500">
-                <img src={contactBg} alt="Office Background" className="w-full h-full object-cover opacity-20 grayscale" />
-                <div className="absolute inset-0 bg-[#0f0c1d]/90" />
-                {/* Grid Pattern Overlay for Info Section */}
-                <div className="absolute inset-0 opacity-20"
-                  style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-                </div>
-              </div>
+            <div className="order-2 lg:col-span-5 bg-black relative text-white flex flex-col justify-center px-6 md:px-16 py-20 lg:py-0 overflow-hidden">
 
               <div className="relative z-10 max-w-md mx-auto lg:mx-0 animate-slide-up delay-500">
                 <div className="w-12 h-1 bg-[#5e3aff] mb-8" />
                 <h2 className="text-3xl md:text-4xl font-light mb-2">
-                  Headquarters
+                  Reach Us Directly
                 </h2>
                 <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-10">
                   Elizabeth, New Jersey
@@ -280,7 +271,7 @@ export default function Contact() {
                       <FaMapMarkerAlt className="text-lg" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Address</p>
+                      <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Warehouse Address</p>
                       <p className="group-hover:text-white transition-colors leading-relaxed">
                         Elizabeth, NJ <br />
                         Serving the Tri-State Area & Nationwide

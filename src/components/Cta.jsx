@@ -1,12 +1,13 @@
+
 import { Link } from "react-router-dom";
 
 export default function Cta() {
     return (
         <section className="w-full bg-white py-24 px-6 md:px-16 text-black overflow-hidden">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
+            <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
 
                 {/* Left Side: Text */}
-                <div className="w-full md:w-1/2 text-center md:text-left space-y-8">
+                <div className="w-full md:flex-1 text-center md:text-left space-y-8">
                     <h2 className="text-5xl md:text-7xl font-light text-black tracking-tighter leading-[1.1]">
                         <span className="inline-block animate-slide-up" style={{ animationDelay: '0ms' }}>Ready to</span> <br className="hidden md:block" />
                         <span className="inline-block animate-slide-up" style={{ animationDelay: '100ms' }}>transform</span>{' '}
@@ -20,7 +21,7 @@ export default function Cta() {
                 </div>
 
                 {/* Right Side: Big Circular Button */}
-                <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+                <div className="w-full md:w-auto flex justify-center">
                     <Link
                         to="/contact"
                         className="no-underline-hover group relative w-48 h-48 md:w-64 md:h-64 bg-[#5e3aff] rounded-full flex flex-col items-center justify-center text-white transition-all duration-500 hover:scale-105 hover:rotate-3 shadow-2xl hover:shadow-[0_20px_50px_rgba(94,58,255,0.3)] z-10"
@@ -36,6 +37,9 @@ export default function Cta() {
                         >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" transform="rotate(-45 12 12)" />
                         </svg>
+
+                        {/* Continuous Pulse Glow */}
+                        <div className="absolute inset-0 rounded-full bg-[#5e3aff] opacity-40 blur-2xl animate-pulse -z-20" />
 
                         {/* Ripple/Pulse Effect behind */}
                         <div className="absolute inset-0 rounded-full border border-[#5e3aff]/30 scale-110 group-hover:scale-125 transition-transform duration-700 ease-out -z-10" />

@@ -10,8 +10,8 @@ export default function Cta() {
                 <div className="w-full md:flex-1 text-center md:text-left space-y-8">
                     <h2 className="text-5xl md:text-7xl font-light text-black tracking-tighter leading-[1.1]">
                         <span className="inline-block animate-slide-up" style={{ animationDelay: '0ms' }}>Ready to</span> <br className="hidden md:block" />
-                        <span className="inline-block animate-slide-up" style={{ animationDelay: '100ms' }}>transform</span>{' '}
-                        <span className="inline-block text-[#5e3aff] font-normal animate-slide-up" style={{ animationDelay: '200ms' }}>
+                        <span className="inline-block text-[#5e3aff] font-normal animate-slide-up" style={{ animationDelay: '100ms' }}>transform</span>{' '}
+                        <span className="inline-block animate-slide-up" style={{ animationDelay: '200ms' }}>
                             your space?
                         </span>
                     </h2>

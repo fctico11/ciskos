@@ -47,14 +47,17 @@ export default function Contact() {
         {/* --- HERO SECTION --- */}
         {/* Mobile: Standard Padding. Desktop: Taller for overlap effect. */}
         <section className="w-full bg-[#1e0033] text-white px-6 pt-[140px] md:pt-[180px] pb-[60px] lg:pb-[180px] relative overflow-hidden">
-          {/* Architectural Grid Background (Desktop) */}
-          <div className="hidden lg:block absolute inset-0 opacity-10 pointer-events-none"
-            style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
-          </div>
+          {/* Parallax Background Container */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Architectural Grid Background (Desktop) */}
+            <div className="hidden lg:block absolute inset-0 opacity-10 pointer-events-none"
+              style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
+            </div>
 
-          {/* Floating Orbs */}
-          <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#5e3aff] rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-float pointer-events-none" />
-          <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-[#3a1c99] rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-float pointer-events-none" style={{ animationDelay: '-3s' }} />
+            {/* Floating Orbs */}
+            <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#5e3aff] rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-float pointer-events-none" />
+            <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-[#3a1c99] rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-float pointer-events-none" style={{ animationDelay: '-3s' }} />
+          </div>
 
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light mb-6 tracking-tight animate-fade-in">
@@ -242,12 +245,18 @@ export default function Contact() {
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="w-full py-5 bg-[#1e0033] hover:bg-[#5e3aff] text-white font-bold tracking-[0.2em] uppercase transition-all duration-500 mt-8"
-                  >
-                    Send Message
-                  </button>
+                  <div>
+                    <button
+                      type="submit"
+                      className="w-full py-5 bg-[#1e0033] hover:bg-[#5e3aff] text-white font-bold tracking-[0.2em] uppercase transition-all duration-500"
+                    >
+                      Send Message
+                    </button>
+                    <p className="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                      Your information is 100% private and secure.
+                    </p>
+                  </div>
                 </form>
               </div>
             </div>

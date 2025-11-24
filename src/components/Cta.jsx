@@ -8,10 +8,13 @@ export default function Cta() {
                 {/* Left Side: Text */}
                 <div className="w-full md:w-1/2 text-center md:text-left space-y-8">
                     <h2 className="text-5xl md:text-7xl font-light text-black tracking-tighter leading-[1.1]">
-                        Ready to transform <br className="hidden md:block" />
-                        <span className="text-[#5e3aff]">your space?</span>
+                        <span className="inline-block animate-slide-up" style={{ animationDelay: '0ms' }}>Ready to</span> <br className="hidden md:block" />
+                        <span className="inline-block animate-slide-up" style={{ animationDelay: '100ms' }}>transform</span>{' '}
+                        <span className="inline-block text-[#5e3aff] font-normal animate-slide-up" style={{ animationDelay: '200ms' }}>
+                            your space?
+                        </span>
                     </h2>
-                    <p className="text-gray-500 text-lg md:text-xl max-w-xl mx-auto md:mx-0 leading-relaxed font-light">
+                    <p className="text-gray-500 text-lg md:text-xl max-w-xl mx-auto md:mx-0 leading-relaxed font-light animate-fade-in delay-400">
                         From complex installations to seamless relocations, we bring precision and care to every square foot of your office.
                     </p>
                 </div>
@@ -20,7 +23,7 @@ export default function Cta() {
                 <div className="w-full md:w-1/2 flex justify-center md:justify-end">
                     <Link
                         to="/contact"
-                        className="group relative w-48 h-48 md:w-64 md:h-64 bg-[#5e3aff] rounded-full flex flex-col items-center justify-center text-white transition-all duration-500 hover:scale-105 hover:rotate-3 shadow-2xl hover:shadow-[0_20px_50px_rgba(94,58,255,0.3)] z-10"
+                        className="no-underline-hover group relative w-48 h-48 md:w-64 md:h-64 bg-[#5e3aff] rounded-full flex flex-col items-center justify-center text-white transition-all duration-500 hover:scale-105 hover:rotate-3 shadow-2xl hover:shadow-[0_20px_50px_rgba(94,58,255,0.3)] z-10"
                     >
                         <span className="text-xl md:text-2xl font-medium tracking-wide mb-2">Get in Touch</span>
 

@@ -1,6 +1,6 @@
 import logo from "../assets/whiteLogoCropped.webp";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
     return (
@@ -27,7 +27,9 @@ export default function Footer() {
                     {/* Social Icons */}
                     <div className="flex items-center space-x-4 pt-3">
                         <a
-                            href="#"
+                            href="https://www.instagram.com/ciskostotalinstall/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="no-underline-hover w-9 h-9 rounded-full bg-white/10 flex items-center justify-center 
                                        transition-all hover:bg-white hover:text-[#5e3aff]"
                         >
@@ -39,7 +41,7 @@ export default function Footer() {
                             className="no-underline-hover w-9 h-9 rounded-full bg-white/10 flex items-center justify-center 
                                        transition-all hover:bg-white hover:text-[#5e3aff]"
                         >
-                            <FaFacebookF className="text-lg" />
+                            <FaLinkedin className="text-lg" />
                         </a>
                     </div>
                 </div>

@@ -289,7 +289,7 @@ export default function ServicesPage() {
               {logisticsServices.map((service, idx) => (
                 <FadeInSection key={idx} delay={idx * 100}>
                   <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors duration-300 h-full">
-                    <h3 className="text-xl font-semibold mb-3 text-yellow-400">
+                    <h3 className="text-xl font-semibold mb-3 text-white">
                       {service.title}
                     </h3>
                     <p className="text-white/70 text-sm leading-relaxed">

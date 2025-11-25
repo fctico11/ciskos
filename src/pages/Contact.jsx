@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import contactBg from '../assets/projects/tma/coolshot.webp';
+import { DotLottiePlayer } from '@dotlottie/react-player';
+import SuccessAnimation from '../assets/lottie/Success.lottie';
 
 export default function Contact() {
   useEffect(() => {
@@ -26,6 +28,22 @@ export default function Contact() {
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessOverlay, setShowSuccessOverlay] = useState(false);
+
+  const closeSuccessOverlay = () => {
+    setShowSuccessOverlay(false);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      company: '',
+      service: '',
+      source: '',
+      contactMethod: 'email',
+      message: ''
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,18 +59,8 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        alert('Thank you for your message. We will be in touch shortly.');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          address: '',
-          company: '',
-          service: '',
-          source: '',
-          contactMethod: 'email',
-          message: ''
-        });
+        setShowSuccessOverlay(true);
+        // Form reset is handled when closing the overlay
       } else {
         const data = await response.json();
         if (Object.hasOwn(data, 'errors')) {
@@ -368,6 +376,61 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      {showSuccessOverlay && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-50 animate-fade-in">
+          <div
+            className="max-w-md mx-auto p-8 text-center text-white relative animate-slide-up"
+            style={{
+              backdropFilter: "blur(10px)",
+              WebkitBackdropFilter: "blur(10px)",
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
+              borderRadius: "1rem",
+              border: "1px solid rgba(255, 255, 255, 0.2)"
+            }}
+          >
+            <button
+              onClick={closeSuccessOverlay}
+              className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div className="w-48 h-48 mx-auto mb-6">
+              <DotLottiePlayer
+                src={SuccessAnimation}
+                loop
+                autoplay
+                speed={0.7}
+              />
+            </div>
+
+            <h3 className="text-2xl font-light mb-4 tracking-tight">
+              Message Sent Successfully
+            </h3>
+
+            <p className="text-white/80 mb-8 font-light leading-relaxed">
+              Thank you for reaching out. Our team will review your inquiry and get back to you within 48 hours.
+            </p>
+
+            <div className="flex gap-4 justify-center">
+              <button
+                onClick={closeSuccessOverlay}
+                className="px-8 py-3 bg-[#5e3aff] hover:bg-[#4a2ce0] text-white font-bold tracking-widest uppercase text-sm transition-all duration-300 rounded-none"
+              >
+                Close
+              </button>
+              <a
+                href="/"
+                className="px-8 py-3 bg-gray-700 hover:bg-gray-600 text-white font-bold tracking-widest uppercase text-sm transition-all duration-300 rounded-none flex items-center justify-center"
+              >
+                Back to Home
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

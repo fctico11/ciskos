@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Cta() {
     return (
-        <section className="w-full bg-white py-24 px-6 md:px-16 text-black overflow-hidden">
+        <section className="w-full bg-white py-12 md:py-24 px-6 md:px-16 text-black overflow-hidden">
             <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
 
                 {/* Left Side: Text */}

@@ -33,7 +33,7 @@ export default function About() {
         <Header />
 
         {/* --- Hero Section --- */}
-        <section className="w-full bg-[#1e0033] text-white pt-[100px] pb-[40px] px-6 relative overflow-hidden">
+        <section className="w-full bg-[#1e0033] text-white pt-[100px] pb-[40px] px-6 relative overflow-hidden min-h-[280px]">
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <h1 className="text-4xl md:text-6xl font-light mb-6 tracking-tight animate-fade-in">
               About Ciskos

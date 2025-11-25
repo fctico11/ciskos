@@ -205,7 +205,7 @@ export default function Projects() {
       </Link>
 
       {/* INTRO SECTION */}
-      <section className="w-full bg-[#1e0033] text-white px-6 pt-[100px] pb-[40px] relative overflow-hidden">
+      <section className="w-full bg-[#1e0033] text-white px-6 pt-[100px] pb-[40px] relative overflow-hidden min-h-[280px]">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-light mb-6 tracking-tight animate-fade-in">
             Our Project Work

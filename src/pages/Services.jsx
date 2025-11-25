@@ -157,7 +157,7 @@ export default function ServicesPage() {
 
         {/* --- Hero Section --- */}
         {/* Reduced top padding based on user feedback */}
-        <section className="w-full bg-[#1e0033] text-white pt-[100px] pb-[40px] px-6 relative overflow-hidden">
+        <section className="w-full bg-[#1e0033] text-white pt-[100px] pb-[40px] px-6 relative overflow-hidden min-h-[280px]">
           {/* Abstract Background Shape */}
 
           <div className="max-w-4xl mx-auto text-center relative z-10">

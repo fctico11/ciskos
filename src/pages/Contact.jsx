@@ -25,10 +25,50 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message. We will be in touch shortly.');
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xldkljkq", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Thank you for your message. We will be in touch shortly.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          address: '',
+          company: '',
+          service: '',
+          source: '',
+          contactMethod: 'email',
+          message: ''
+        });
+      } else {
+        const data = await response.json();
+        if (Object.hasOwn(data, 'errors')) {
+          console.error('Formspree Error:', data.errors.map(error => error.message).join(", "));
+          alert(`Something went wrong: ${data.errors.map(error => error.message).join(", ")}`);
+        } else {
+          console.error('Formspree Error:', data);
+          alert('Something went wrong. Please try again later.');
+        }
+      }
+    } catch (error) {
+      console.error('Submission Error:', error);
+      alert('Something went wrong. Please try again later or contact us directly at admin@ciskos.com.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -248,9 +288,10 @@ export default function Contact() {
                   <div>
                     <button
                       type="submit"
-                      className="w-full py-5 bg-[#1e0033] hover:bg-[#5e3aff] text-white font-bold tracking-[0.2em] uppercase transition-all duration-500"
+                      disabled={isSubmitting}
+                      className="w-full py-5 bg-[#1e0033] hover:bg-[#5e3aff] disabled:bg-gray-400 text-white font-bold tracking-[0.2em] uppercase transition-all duration-500"
                     >
-                      Send Message
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
                     <p className="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>

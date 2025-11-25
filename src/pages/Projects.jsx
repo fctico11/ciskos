@@ -2,6 +2,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
+import Cta from "../components/Cta";
 import logo from "../assets/whiteLogoCropped.webp";
 
 // Auto-import all Clariant images
@@ -355,9 +356,8 @@ export default function Projects() {
         ------------------------------ */}
         <div
           ref={tmaRef}
-          className={`grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-start pb-24 ${
-            showTma ? (isMobile ? "fade-up" : "animate-slide-right") : "opacity-0"
-          }`}
+          className={`grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-start pb-24 ${showTma ? (isMobile ? "fade-up" : "animate-slide-right") : "opacity-0"
+            }`}
         >
           {/* LEFT COLUMN - Specs */}
           <div className="order-2 md:order-1 text-gray-800 md:pr-8">
@@ -393,7 +393,7 @@ export default function Projects() {
               <li>Hospitality-inspired office environment</li>
             </ul>
 
-      
+
           </div>
 
           {/* RIGHT COLUMN - Title + Carousel */}
@@ -436,9 +436,8 @@ export default function Projects() {
                   key={img.name}
                   src={img.src}
                   alt={img.name}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                    i === tmaIndex ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === tmaIndex ? "opacity-100" : "opacity-0"
+                    }`}
                   draggable="false"
                 />
               ))}
@@ -483,6 +482,8 @@ export default function Projects() {
           </div>
         </div>
       </div>
+
+      <Cta />
     </div>
   );
 }

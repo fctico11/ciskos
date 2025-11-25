@@ -141,7 +141,7 @@ export default function Contact() {
                   {/* Row 1 */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-2 group">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Name</label>
+                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Name *</label>
                       <input
                         type="text"
                         name="name"
@@ -153,7 +153,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2 group">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Email</label>
+                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Email *</label>
                       <input
                         type="email"
                         name="email"
@@ -169,7 +169,7 @@ export default function Contact() {
                   {/* Row 2 */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-2 group">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Phone</label>
+                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Phone *</label>
                       <input
                         type="tel"
                         name="phone"
@@ -181,7 +181,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2 group">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Project Address</label>
+                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Project Address *</label>
                       <input
                         type="text"
                         name="address"
@@ -197,7 +197,7 @@ export default function Contact() {
                   {/* Row 3 */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-2 group">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Company</label>
+                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Company *</label>
                       <input
                         type="text"
                         name="company"
@@ -205,14 +205,16 @@ export default function Contact() {
                         onChange={handleChange}
                         className="w-full bg-transparent border-b-2 border-gray-200 px-0 py-3 text-gray-900 placeholder-gray-300 focus:outline-none focus:border-[#5e3aff] transition-all rounded-none"
                         placeholder="COMPANY NAME"
+                        required
                       />
                     </div>
                     <div className="space-y-2 group">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Service Needed</label>
+                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Service Needed *</label>
                       <select
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
+                        required
                         className="w-full bg-transparent border-b-2 border-gray-200 px-0 py-3 text-gray-900 focus:outline-none focus:border-[#5e3aff] transition-all rounded-none appearance-none cursor-pointer"
                       >
                         <option value="">SELECT A SERVICE</option>
@@ -239,8 +241,10 @@ export default function Contact() {
                       >
                         <option value="">SELECT AN OPTION</option>
                         <option value="google">Google Search</option>
+                        <option value="returning">Returning Client</option>
                         <option value="referral">Referral</option>
-                        <option value="social">Social Media</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="linkedin">LinkedIn</option>
                         <option value="email">Email Campaign</option>
                         <option value="other">Other</option>
                       </select>
@@ -281,7 +285,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2 group">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Message</label>
+                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest group-focus-within:text-[#5e3aff] transition-colors">Message *</label>
                     <textarea
                       name="message"
                       value={formData.message}

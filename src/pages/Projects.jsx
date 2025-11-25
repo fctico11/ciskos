@@ -205,12 +205,12 @@ export default function Projects() {
       </Link>
 
       {/* INTRO SECTION */}
-      <section className="w-full bg-[#1e0033] text-white px-6 pt-[110px] md:pt-[80px] pb-[32px]">
+      <section className="w-full bg-[#1e0033] text-white px-6 pt-[100px] pb-[40px] relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-light mb-2">
+          <h1 className="text-4xl md:text-6xl font-light mb-6 tracking-tight animate-fade-in">
             Our Project Work
-          </h2>
-          <p className="text-white/80 text-base md:text-lg leading-relaxed">
+          </h1>
+          <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-light animate-slide-up delay-200">
             Take a look at some of the projects we’ve completed for clients
             across the tri-state area — including full DIRTT buildouts, office
             transformations, AV integrations, and modern workspace solutions.

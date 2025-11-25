@@ -33,18 +33,12 @@ export default function About() {
         <Header />
 
         {/* --- Hero Section --- */}
-        <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
-            style={{ backgroundImage: `url(${heroBg})` }}
-          />
-          <div className="absolute inset-0 bg-black/50" />
-
-          <div className="relative z-10 text-center px-6 max-w-4xl mx-auto text-white">
-            <h1 className="text-5xl md:text-7xl font-light mb-6 tracking-tight animate-fade-in">
+        <section className="w-full bg-[#1e0033] text-white pt-[100px] pb-[40px] px-6 relative overflow-hidden">
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <h1 className="text-4xl md:text-6xl font-light mb-6 tracking-tight animate-fade-in">
               About Ciskos
             </h1>
-            <p className="text-xl md:text-2xl font-light text-white/90 animate-slide-up delay-200">
+            <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-light animate-slide-up delay-200">
               Building the foundation for your success.
             </p>
           </div>

@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <footer className="bg-[#0f001f] text-white pt-16 pb-8 px-6 md:px-16 w-full">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12">
-                
+
                 {/* Logo + Description */}
                 <div className="space-y-4 md:col-span-2">
                     <div className="w-36 mb-2">
@@ -74,8 +74,8 @@ export default function Footer() {
                     <ul className="space-y-3 text-white/70 text-sm">
                         <li>
                             Email:{" "}
-                            <a href="mailto:cisko11@yahoo.com" className="hover:text-white">
-                                cisko11@yahoo.com
+                            <a href="mailto:admin@ciskos.com" className="hover:text-white">
+                                admin@ciskos.com
                             </a>
                         </li>
                         <li>

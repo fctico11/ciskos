@@ -293,8 +293,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Email</p>
-                      <a href="mailto:cisko11@yahoo.com" className="hover:text-white transition-colors block">
-                        cisko11@yahoo.com
+                      <a href="mailto:admin@ciskos.com" className="hover:text-white transition-colors block">
+                        admin@ciskos.com
                       </a>
                     </div>
                   </div>

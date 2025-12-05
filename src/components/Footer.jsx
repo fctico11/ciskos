@@ -37,7 +37,9 @@ export default function Footer() {
                         </a>
 
                         <a
-                            href="#"
+                            href="https://www.linkedin.com/company/ciskos-total-install"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="no-underline-hover w-9 h-9 rounded-full bg-white/10 flex items-center justify-center 
                                        transition-all hover:bg-white hover:text-[#5e3aff]"
                         >

@@ -369,7 +369,7 @@ export default function Contact() {
                     <a href="#" className="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-[#5e3aff] hover:border-[#5e3aff] transition-all duration-300">
                       <FaInstagram className="text-lg" />
                     </a>
-                    <a href="#" className="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-[#5e3aff] hover:border-[#5e3aff] transition-all duration-300">
+                    <a href="https://www.linkedin.com/company/ciskos-total-install" target="_blank" rel="noopener noreferrer" className="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-[#5e3aff] hover:border-[#5e3aff] transition-all duration-300">
                       <FaLinkedin className="text-lg" />
                     </a>
                   </div>

@@ -220,7 +220,7 @@ export default function Contact() {
                         <option value="">SELECT A SERVICE</option>
                         <option value="installation">Furniture Installation</option>
                         <option value="relocation">Office Relocation</option>
-                        <option value="glass">Architectural Glass</option>
+                        <option value="glass">Architectural Glass/Walls</option>
                         <option value="storage">Warehousing & Storage</option>
                         <option value="liquidation">Liquidation & Disposal</option>
                         <option value="pm">Project Management</option>

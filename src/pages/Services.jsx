@@ -8,9 +8,9 @@ import coolshot from '../assets/projects/tma/coolshot.webp';
 
 const specializedServices = [
   {
-    title: 'Architectural Glass',
+    title: 'Office Relocation',
     description:
-      'Elevate your office with pristine glass solutions. We specialize in office window fronts, acoustic phone booths, and aesthetic glass walls that define modern transparency.',
+      'Seamless transitions for your evolving business. We manage every detail of your move—packing, transport, and setup—so you can focus on what matters most.',
   },
   {
     title: 'Space Reconfiguration',
@@ -59,6 +59,15 @@ const furnitureManufacturers = [
   'National',
   'Bernhardt',
   'Davis',
+];
+
+const glassSystems = [
+  'DIRTT',
+  'Falk',
+  'Tecno',
+  'Modernfold',
+  'NanaWall',
+  'Klein',
 ];
 
 // --- Components ---
@@ -214,18 +223,18 @@ export default function ServicesPage() {
                   </div>
                 </FadeInSection>
 
-                {/* Block 2: Office Relocation */}
+                {/* Block 2: Architectural Glass/Walls */}
                 <FadeInSection delay={200}>
                   <div className="space-y-6">
                     <div className="w-16 h-1 bg-[#5e3aff] rounded-full mb-6" />
                     <h2 className="text-4xl md:text-5xl font-light text-black tracking-tight">
-                      Office Relocation
+                      Architectural Glass/Walls
                     </h2>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Seamless transitions for your evolving business. We manage every detail of your move—packing, transport, and setup—so you can focus on what matters most. Whether you are moving across the hall or across the state, we have you covered.
+                      Transform your workspace with premium glass fronts and wall systems. We specialize in installing sophisticated architectural glass solutions including DIRTT, Falk, and Tecno systems—creating modern, transparent environments that enhance collaboration while maintaining acoustic privacy.
                     </p>
                     <button
-                      onClick={() => setActiveModal('relocation')}
+                      onClick={() => setActiveModal('glass')}
                       className="text-[#5e3aff] font-medium hover:text-[#4a2bc2] transition-colors flex items-center gap-2 group"
                     >
                       Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -331,6 +340,39 @@ export default function ServicesPage() {
                   >
                     <span className="w-2 h-2 bg-[#5e3aff] rounded-full group-hover:scale-150 transition-transform" />
                     <span className="text-xl font-medium text-gray-800 group-hover:text-[#5e3aff] transition-colors">{brand}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </ServiceModal>
+
+        <ServiceModal
+          isOpen={activeModal === 'glass'}
+          onClose={() => setActiveModal(null)}
+          title="Architectural Glass/Walls"
+        >
+          <div className="space-y-10">
+            <div>
+              <h4 className="text-2xl font-semibold text-[#5e3aff] mb-4">Modern Glass Solutions</h4>
+              <p className="text-lg text-gray-700">
+                Create inspiring workspaces with state-of-the-art glass wall systems. Our expert installers bring precision and care to every project, from office fronts and conference rooms to acoustic phone booths and collaborative spaces. We transform environments with transparent, modern aesthetics that promote openness while providing necessary privacy and sound control.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-2xl font-semibold text-[#5e3aff] mb-6">Glass Systems & Manufacturers</h4>
+              <p className="mb-6 text-lg text-gray-700">
+                We specialize in installing premium architectural glass systems from industry-leading manufacturers:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {glassSystems.map((system, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-[#5e3aff]/5 transition-colors duration-300 group"
+                  >
+                    <span className="w-2 h-2 bg-[#5e3aff] rounded-full group-hover:scale-150 transition-transform" />
+                    <span className="text-xl font-medium text-gray-800 group-hover:text-[#5e3aff] transition-colors">{system}</span>
                   </div>
                 ))}
               </div>

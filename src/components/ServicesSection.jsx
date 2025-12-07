@@ -29,7 +29,7 @@ export default function ServicesSection() {
 
     const services = [
         { img: service1, title: "Furniture Installation", desc: "Desks, seating, accessories, cubicles, conference rooms, lockers, file cabinets, and more." },
-        { img: service2, title: "Architectural Glass", desc: "Office fronts, phone booths, conference rooms, and other glass installations." },
+        { img: service2, title: "Architectural Glass/Walls", desc: "Premium glass fronts and wall systems including DIRTT, Falk, and others—creating modern, transparent workspaces." },
         { img: service3, title: "Office Relocation & Reconfiguration", desc: "Complete remodeling, relocation, storage, and final installation services." },
         { img: service4, title: "Product Receiving & Shipping", desc: "Secure warehouse receiving, inspection, storage, and delivery in Union County, NJ." }
     ];
@@ -48,9 +48,9 @@ export default function ServicesSection() {
                     </h2>
                     <p className="text-gray-600 max-w-3xl mx-auto mt-4 text-sm md:text-base leading-relaxed">
                         Ciskos provides complete office furniture installation and workspace solutions for commercial
-                        offices, corporate environments, and dealer-supported projects across the Tri-State Area. From 
-                        workstation installs and architectural glass systems to relocation services and product receiving, 
-                        our team delivers reliable, detail-driven work that keeps your project on schedule and aligned with 
+                        offices, corporate environments, and dealer-supported projects across the Tri-State Area. From
+                        workstation installs and architectural glass systems to relocation services and product receiving,
+                        our team delivers reliable, detail-driven work that keeps your project on schedule and aligned with
                         manufacturer standards.
                     </p>
                 </div>
